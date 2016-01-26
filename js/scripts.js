@@ -7,32 +7,30 @@ function Ticket(filmName, showing, SeniorDiscount) {
 
 Ticket.prototype.price = function() {
 
-	//all tickets begin with a base price of 6
+
 	var ticketPrice = 8;
 
-	//if a ticket is for a new release movie add 2 to its cost.
-	// if it's for an old movie, do not add to its cost.
+
 	if (
 		this.filmName === "Movie1" ||
 		this.filmName === "Movie2" ||
 		this.filmName === "Movie3" ||
-		this.filmName === "The Hateful Eight"
+		this.filmName === "Movie4"
 		) {
-		ticketPrice += 2;
+		ticketPrice += 4;
 	} else if (this.filmName === "Other") {
 		ticketPrice += 0;
 	}
 
-	//if a ticket is for a main showing add 2 to its cost.
-	//if a ticket is for a matinee showing do not add to its cost.
+
 	if (this.showing === "Main" ) {
-		ticketPrice += 2;
+		ticketPrice += 3;
 	} else if (this.showing ==="Matinee") {
 		ticketPrice += 0;
 	}
 
 	if (this.SeniorDiscount === true) {
-		ticketPrice -=2;
+		ticketPrice -=5;
 	} else if (this.SeniorDiscount === false) {
 		ticketPrice += 0;
 	}
@@ -41,7 +39,7 @@ Ticket.prototype.price = function() {
 };
 
 
-// UI Logic
+
 
 
 $(document).ready(function() {
